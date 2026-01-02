@@ -139,6 +139,11 @@ header h1 {
     .media-info {
         display: none;
     }
+    
+    .media-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -288,6 +293,7 @@ header h1 {
     display: flex;
     justify-content: center;
     gap: 15px;
+    padding: 15px 0;
 }
 
 .action-btn {
@@ -297,43 +303,27 @@ header h1 {
     cursor: pointer;
     font-size: 1rem;
     transition: all 0.3s ease;
-    min-width: 120px;
+    min-width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-.icon-btn {
-    flex-direction: column;
-    padding: 15px 20px;
-    min-width: 80px;
-}
-
-.icon {
+.btn-icon {
     font-size: 1.5rem;
 }
 
-.btn-text {
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.action-btn:not(.delete-btn) {
-    background-color: #3578e5;
-    color: white;
-    box-shadow: 0 2px 4px rgba(53, 120, 229, 0.3);
-}
-
 .delete-btn {
-    background-color: #e74c3c;
-    color: white;
-    box-shadow: 0 2px 4px rgba(231, 76, 60, 0.3);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #e74c3c;
 }
 
 .action-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* Mobile Icon Buttons */
@@ -343,40 +333,37 @@ header h1 {
     }
     
     .action-btn {
-        padding: 15px 15px;
-        min-width: 70px;
+        padding: 15px;
+        min-width: 50px;
     }
     
-    .icon-btn {
-        padding: 20px 15px;
-        min-width: 70px;
-    }
-    
-    .icon {
+    .btn-icon {
         font-size: 1.8rem;
-    }
-    
-    .btn-text {
-        font-size: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
     .modal-actions {
         flex-direction: column;
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.7);
+        border-radius: 20px;
+        padding: 15px 10px;
+        gap: 15px;
     }
     
     .action-btn {
-        width: 100%;
-        padding: 12px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.9);
+        min-width: 40px;
+        width: 40px;
     }
     
-    .icon {
-        font-size: 2rem;
-    }
-    
-    .btn-text {
-        font-size: 1rem;
+    .btn-icon {
+        font-size: 1.5rem;
     }
 }
 
