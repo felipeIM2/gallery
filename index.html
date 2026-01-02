@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Photo Gallery</h1>
+        </header>
+        
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="fotos">Minhas Fotos</button>
+            <button class="nav-tab" data-tab="videos">Meus Videos</button>
+        </nav>
+        
+        <main>
+            <!-- Fotos Tab Content -->
+            <div class="tab-content active" id="fotos-tab">
+                <div class="add-button-container">
+                    <button class="add-btn" id="addFotoBtn">+</button>
+                </div>
+                <input type="file" id="fotoInput" accept="image/*" multiple style="display: none;">
+                
+                <div class="gallery-container">
+                    <div class="gallery" id="fotosGallery">
+                        <!-- Image cards will be dynamically added here -->
+                        <div class="empty-gallery-message">
+                            <p>Nenhuma foto adicionada ainda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Videos Tab Content -->
+            <div class="tab-content" id="videos-tab">
+                <div class="add-button-container">
+                    <button class="add-btn" id="addVideoBtn">+</button>
+                </div>
+                <input type="file" id="videoInput" accept="video/*" multiple style="display: none;">
+                
+                <div class="gallery-container">
+                    <div class="gallery" id="videosGallery">
+                        <!-- Video cards will be dynamically added here -->
+                        <div class="empty-gallery-message">
+                            <p>Nenhum video adicionado ainda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Modal for media preview -->
+        <div class="modal" id="previewModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" id="closeModal">&times;</span>
+                </div>
+                <div class="media-container">
+                    <img class="modal-media" id="modalImage" src="" alt="Preview" style="display: none;">
+                    <video class="modal-media" id="modalVideo" controls style="display: none;">
+                        <source src="" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                </div>
+                <div class="modal-actions">
+                    <button id="downloadBtn" class="action-btn icon-btn" title="Download">
+                        <span class="icon">📥</span>
+                        <span class="btn-text">Download</span>
+                    </button>
+                    <button id="deleteBtn" class="action-btn delete-btn icon-btn" title="Delete">
+                        <span class="icon">🗑️</span>
+                        <span class="btn-text">Delete</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
